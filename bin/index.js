@@ -1,33 +1,21 @@
 #!/usr/bin/env node
 
-const inquirer = require('inquirer');
+const { program } = require('commander');
+const config = require('../package.json');
 
-const questions = [
-  {
-    type: 'input',
-    message: 'please enter the name of project',
-    name: 'project',
-  },
-  {
-    type: 'list',
-    message: 'please choose your configuration about blockly',
-    name: 'unit',
-    choices: ['blockly', 'scratch'],
-  },
-  {
-    type: 'input',
-    message: 'please write the description of project',
-    name: 'description',
-  },
-];
-
-inquirer
-  .prompt(questions)
-  .then((answers) => {
-    console.warn('answers: ', answers);
-  })
-  .catch((error) => {
-    console.warn('========================');
-    console.warn(error);
-    console.warn('========================');
+program
+  .command('init [project]')
+  .description('initialize the project by template')
+  .option('--template', 'specify a template for the created project')
+  .action((project) => {
+    console.warn(project);
   });
+
+program
+  .command('info')
+  .description('get information about cli')
+  .action(() => {
+    console.warn("cli's info");
+  });
+
+program.parse(process.argv);
