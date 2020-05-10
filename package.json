@@ -1,0 +1,26 @@
+{
+  "name": "ishape",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "bin": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "link": "npm link"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishape/cli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ishape/cli/issues"
+  },
+  "homepage": "https://github.com/ishape/cli#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^5.1.0",
+    "inquirer": "^7.1.0"
+  }
+}
