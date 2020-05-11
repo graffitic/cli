@@ -3,12 +3,14 @@
 const { program } = require('commander');
 const config = require('../package.json');
 
+const Graffitic = require('../src');
+
 program
-  .command('init [project]')
+  .command('init')
   .description('initialize the project by template')
   .option('--template', 'specify a template for the created project')
-  .action((project) => {
-    console.warn(project);
+  .action(() => {
+    Graffitic.init();
   });
 
 program
